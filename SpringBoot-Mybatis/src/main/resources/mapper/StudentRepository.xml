@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.wengzi.repository.StudentClassRepository">
+
+    <select id="queryStudentClassJoinStudentByStuClassId" resultMap="StudentClass_Student_classId"
+            parameterType="java.lang.Integer">
+        select c.classname,s.name,s.age,d.cardinfo from
+        studentclass c inner join student s on c.classid = s.classid
+        inner join studentcard d on d.cardid = s.cardid
+        where c.classid = 1
+    </select>
+
+    <resultMap id="StudentClass_Student_classId" type="StudentClass">
+        <!--主类是StudentClass,先写班级信息-->
+        <result property="className" column="classname"/>
+        <!--配置成员属性学生,属性类型使用javaType,属性的元素类型使用ofType-->
+        <collection property="students" ofType="Student">
+            <result property="name" column="name"/>
+            <result property="age" column="age"/>
+            <!--学生的成员属性 学生证信息-->
+            <association property="studentCard" javaType="StudentCard">
+                <result property="cardInfo" column="cardinfo"/>
+            </association>
+        </collection>
+    </resultMap>
+</mapper>

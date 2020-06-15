@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FileUpload</title>
+</head>
+
+<a href="/img/downloadLocal">下载文件</a>
+
+<body>
+<form method="post" enctype="multipart/form-data" action="/img/singleUpload">
+    <input type="file" name="singleUpload"/>
+    <input type="submit" value="上传"/>
+</form>
+
+
+<form method="post" enctype="multipart/form-data" action="/alibabaoss/uploadFile">
+    <input type="file" name="filename"/>
+    <input type="submit" value="上传文件到阿里云OSS"/>
+</form>
+
+<a href="/alibabaoss/downloadFile">阿里云OSS下载文件</a>
+<a href="/alibabaoss/delFile">阿里云OSS下载文件删除</a>
+</body>
+</html>

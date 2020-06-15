@@ -1,0 +1,22 @@
+server:
+  port: 8888
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 100MB
+
+uploadDir: F:\upload\
+
+excel:
+  fileName: 模板文件.xls
+  filePath: F:\DownLoad\
+
+oss:
+  endpoint: oss-cn-beijing.aliyuncs.com
+  accessKeyId: LTAI4FeSz3kMfy7jKy75odPY
+  accessKeySecret: NHuWc9ywxueBknpTFPq1qg6A9PGSRe
+  bucketName: arley-images
+

@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: boot-security
+    #自定义配置 security
+  security:
+    user:
+      name: admin
+      password: 123123

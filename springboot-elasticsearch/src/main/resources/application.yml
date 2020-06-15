@@ -1,0 +1,9 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: springboot-elasticsearch
+elasticsearch:
+  address: 127.0.0.1
+  port: 9200
+  scheme: http

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.wengzi.repository.StudentRepository">
+
+    <select id="queryStudentAll" resultType="Student" timeout="2">
+        select id,name,age from student
+    </select>
+
+    <select id="queryStudentById" resultType="Student" parameterType="java.lang.Integer" timeout="2">
+        select id,name,age from student where id = #{id}
+    </select>
+
+
+    <select id="queryStudentJoinStudentCardByStuId" resultMap="Student_StudentCard_StuId"
+            parameterType="java.lang.Integer">
+        select s.id,s.name,s.age,c.cardinfo from student s inner join studentcard c
+        on s.cardid = c.cardid where s.id = #{id}
+    </select>
+
+    <resultMap id="Student_StudentCard_StuId" type="Student">
+        <!--学生信息-->
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <!-- 一对一使用 association;javaType指定类型-->
+        <association property="studentCard" javaType="StudentCard">
+            <result property="cardInfo" column="cardinfo"/>
+        </association>
+    </resultMap>
+</mapper>

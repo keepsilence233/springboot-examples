@@ -1,0 +1,9 @@
+.__         .__       .__
+|  |   ____ |__|______|__| ____   ____
+|  | _/ __ \|  \___   /  |/ ___\_/ __ \
+|  |_\  ___/|  |/    /|  / /_/  >  ___/
+|____/\___  >__/_____ \__\___  / \___  >
+          \/         \/ /_____/      \/
+${AnsiColor.BRIGHT_RED}
+Application Version: ${application.version}${application.formatted-version}
+Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
