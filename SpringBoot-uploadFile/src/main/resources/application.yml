@@ -15,8 +15,8 @@ excel:
   filePath: F:\DownLoad\
 
 oss:
-  endpoint: oss-cn-beijing.aliyuncs.com
-  accessKeyId: LTAI4FeSz3kMfy7jKy75odPY
-  accessKeySecret: NHuWc9ywxueBknpTFPq1qg6A9PGSRe
-  bucketName: arley-images
+  endpoint: ~~~~~~~
+  accessKeyId: ~~~~~~
+  accessKeySecret: ~~~~~~
+  bucketName: ~~~~~~
 
