@@ -1,4 +1,4 @@
-package cn.wengzi.config;
+package cn.wengzi.config.eventbus;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;

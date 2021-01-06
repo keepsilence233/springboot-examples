@@ -1,4 +1,4 @@
-package cn.wengzi.config;
+package cn.wengzi.config.eventbus;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 

@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/SpringBoot-Learning.iml" filepath="$PROJECT_DIR$/.idea/SpringBoot-Learning.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringBoot-Email/boot-mail.iml" filepath="$PROJECT_DIR$/SpringBoot-Email/boot-mail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-cache/springboot-cache.iml" filepath="$PROJECT_DIR$/springboot-cache/springboot-cache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-guava-eventbus/springboot-guava-eventbus.iml" filepath="$PROJECT_DIR$/springboot-guava-eventbus/springboot-guava-eventbus.iml" />
     </modules>
   </component>
 </project>

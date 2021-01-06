@@ -1,4 +1,4 @@
-package cn.wengzi.config;
+package cn.wengzi.config.eventbus;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

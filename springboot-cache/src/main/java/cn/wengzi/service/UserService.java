@@ -1,7 +1,6 @@
 package cn.wengzi.service;
 
 import cn.wengzi.entity.User;
-import com.baomidou.mybatisplus.extension.service.IService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

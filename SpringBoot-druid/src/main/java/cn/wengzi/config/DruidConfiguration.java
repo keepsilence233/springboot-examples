@@ -1,4 +1,4 @@
-package cn.wengzi.config;
+package cn.wengzi.config.eventbus;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;

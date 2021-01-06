@@ -8,10 +8,10 @@ spring:
       jdbc-url: jdbc:mysql://localhost:3306/test1?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
       driver-class-name: com.mysql.cj.jdbc.Driver
       username: root
-      password: Zxc233..@
+      password: --
     secondary:   ##数据源2
       jdbc-url: jdbc:mysql://localhost:3306/test2?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
       driver-class-name: com.mysql.cj.jdbc.Driver
       username: root
-      password: Zxc233..@
+      password: --
 
