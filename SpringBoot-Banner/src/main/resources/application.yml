@@ -1,5 +1,0 @@
-spring:
-  banner:
-    charset: utf-8
-  #main:
-    #banner-mode: "off"  ##应用程序中禁用横幅,务必添加引号

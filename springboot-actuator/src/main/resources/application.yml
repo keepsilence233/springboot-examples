@@ -1,8 +1,0 @@
-
-  #注意：在Spring Boot 2.0 中对Actuator变动很大，
-  #默认只提供这三个接口，如果想提供所有接口需要配置application.yml，配置之后重新访问/actuator就会暴露出所有接口
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
