@@ -28,6 +28,8 @@ hs_err_pid*
 *.iml
 *.ipr
 /out/
+*/target
+.
 
 ### STS ###
 .apt_generated
