@@ -1,4 +1,4 @@
-package cn.wengzi.config.eventbus;
+package cn.wengzi.config;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
