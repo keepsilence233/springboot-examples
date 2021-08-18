@@ -5,7 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author wengzi
- * @date 2019/11/09 night 22:19
+ * created  2019/10/16
+ * @Description SpringBoot整合Swagger2
  */
 @SpringBootApplication
 public class Application {
