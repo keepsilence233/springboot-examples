@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.Email;
 import java.io.File;
 import java.util.List;
 
@@ -19,11 +18,11 @@ import java.util.List;
 public class MailEntity {
 
 
-    @Email
+//    @Email
     @Builder.Default
     private String fromEmail = "qx_leizige@163.com";
 
-    @Email
+//    @Email
     @Builder.Default
     private String toEmail = "lei.tl@bitsun-inc.com";
 
