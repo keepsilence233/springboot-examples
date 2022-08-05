@@ -28,7 +28,7 @@ public class ElasticSearchConfig {
      *
      * @return
      */
-    @Bean
+//    @Bean
     public RestHighLevelClient restHighLevelClient() {
         return new RestHighLevelClient(
                 RestClient.builder(
@@ -46,7 +46,7 @@ public class ElasticSearchConfig {
     @Bean
     public RestHighLevelClient esRestClient() {
         CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
-        credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials("elasticsearch", "bitsun@es"));
+        credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(elasticSearchProperties.getUsername(), elasticSearchProperties.getPassword()));
         return new RestHighLevelClient(
                 RestClient.builder(
                         new HttpHost(elasticSearchProperties.getAddress(),
