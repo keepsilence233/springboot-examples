@@ -1,4 +1,5 @@
 
+import qx.leizige.Ref;
 
 public class  ${className}Test {
 
@@ -6,7 +7,9 @@ public class  ${className}Test {
     Integer b = 20;
 
     public void add() {
-        System.out.println(a + b);
+        System.out.println("a + b = " + a + b );
+        Ref ref = new Ref();
+        ref.test();
     }
 
 
