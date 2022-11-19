@@ -29,6 +29,7 @@
         <module>springboot-spring-retry</module>
         <module>springboot-swagger2</module>
         <module>springboot-validation</module>
+        <module>springboot-freemarker</module>
     </modules>
 
     <properties>
