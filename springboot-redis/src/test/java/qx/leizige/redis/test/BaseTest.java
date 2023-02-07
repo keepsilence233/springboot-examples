@@ -3,7 +3,9 @@ package qx.leizige.redis.test;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.jetbrains.annotations.NotNull;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,6 +22,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE, classes = BaseTest.Application.class)
 public abstract class BaseTest {
+
+    @Autowired
+    protected RedisTemplate<String,Object> redisTemplate;
 
     @Import(RedisAutoConfiguration.class)
     @ComponentScan(value = "qx.leizige.redis.test")
@@ -64,7 +69,7 @@ public abstract class BaseTest {
         }
 
         @Bean
-        public ListOperations<String, Object> listOperations(RedisTemplate<String, Object> redisTemplate) {
+        public ListOperations<String, Object> listOperations(@NotNull RedisTemplate<String, Object> redisTemplate) {
             return redisTemplate.opsForList();
         }
 
