@@ -1,7 +1,6 @@
 package qx.leizige.redis.test.hashes;
 
 import lombok.extern.slf4j.Slf4j;
-import org.assertj.core.util.Arrays;
 import org.junit.Test;
 import qx.leizige.redis.test.BaseTest;
 
