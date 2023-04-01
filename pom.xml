@@ -30,7 +30,7 @@
         <module>springboot-swagger2</module>
         <module>springboot-validation</module>
         <module>springboot-freemarker</module>
-        <module>springboot-apache-dubbo-2.X</module>
+        <module>springboot-apache-dubbo</module>
     </modules>
 
     <properties>
