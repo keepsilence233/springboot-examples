@@ -1,6 +1,7 @@
 package qx.leizige.order.service;
 
 import org.apache.dubbo.config.annotation.Service;
+import org.apache.dubbo.rpc.RpcContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -43,6 +44,7 @@ public class OrderService implements OrderApi {
     @Override
     public List<OrderVo> getOrderList() {
         logger.info("serviceName is : {}", serviceName);
+        logger.info("traceId is : {}", RpcContext.getContext().getAttachment("traceId"));
         return orderVoList;
     }
 }
