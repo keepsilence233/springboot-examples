@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <parent>
-        <artifactId>springboot</artifactId>
+        <artifactId>springboot-examples</artifactId>
         <groupId>qx.leizige</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
