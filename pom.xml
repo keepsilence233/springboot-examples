@@ -31,6 +31,7 @@
         <module>springboot-validation</module>
         <module>springboot-freemarker</module>
         <module>springboot-apache-dubbo</module>
+        <module>springboot-apollo</module>
     </modules>
 
     <properties>
