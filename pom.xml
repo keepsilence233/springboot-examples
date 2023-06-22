@@ -33,6 +33,7 @@
         <module>springboot-apache-dubbo</module>
         <module>springboot-apollo</module>
         <module>springboot-xxl-job</module>
+        <module>springboot-async</module>
     </modules>
 
     <properties>
