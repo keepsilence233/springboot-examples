@@ -35,6 +35,7 @@
         <module>springboot-xxl-job</module>
         <module>springboot-async</module>
         <module>springboot-mongo</module>
+        <module>springboot-activiti</module>
     </modules>
 
     <properties>

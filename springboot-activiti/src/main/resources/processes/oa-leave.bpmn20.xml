@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef">
+  <process id="oa-leave" name="oa-leave" isExecutable="true">
+    <startEvent id="oa-leave-start" name="start"/>
+    <userTask id="manager-approval" name="经理审批"/>
+    <userTask id="personnel-approval" name="人事审批"/>
+    <endEvent id="oa-leave-end" name="end"/>
+    <sequenceFlow id="sid-51efc6eb-5c6a-4da1-9f9f-3bd804be4f8a" sourceRef="oa-leave-start" targetRef="manager-approval"/>
+    <sequenceFlow id="sid-a9feb021-0510-4eaf-90f4-cdf7b22c0355" sourceRef="manager-approval" targetRef="personnel-approval"/>
+    <sequenceFlow id="sid-34420647-954f-4e2a-a7be-07ffcce41525" sourceRef="personnel-approval" targetRef="oa-leave-end"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_oa-leave">
+    <bpmndi:BPMNPlane bpmnElement="oa-leave" id="BPMNPlane_oa-leave">
+      <bpmndi:BPMNShape id="shape-658294d5-39f2-48d1-b02a-0a9f98c5f852" bpmnElement="oa-leave-start">
+        <omgdc:Bounds x="-175.0" y="-40.0" width="30.0" height="30.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape-0042d31b-79d8-4c76-8c91-6f243b0f3c65" bpmnElement="manager-approval">
+        <omgdc:Bounds x="-115.0" y="-42.5" width="60.000004" height="35.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="sid-f9b931df-e427-41aa-8f4b-b0b97aa094f1" bpmnElement="personnel-approval">
+        <omgdc:Bounds x="-26.25" y="-42.5" width="60.000004" height="35.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape-d2bf2121-7edf-4763-b623-35ffe957c903" bpmnElement="oa-leave-end">
+        <omgdc:Bounds x="75.0" y="-40.0" width="30.0" height="30.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge-6dcdb195-c4dd-49d2-8b11-3e02730633f3" bpmnElement="sid-51efc6eb-5c6a-4da1-9f9f-3bd804be4f8a">
+        <omgdi:waypoint x="-145.0" y="-25.0"/>
+        <omgdi:waypoint x="-115.0" y="-25.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-ba88a127-2fc4-40ad-a20f-1ce0abaa7e77" bpmnElement="sid-a9feb021-0510-4eaf-90f4-cdf7b22c0355">
+        <omgdi:waypoint x="-55.0" y="-25.0"/>
+        <omgdi:waypoint x="-26.25" y="-25.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-1b09eb5d-6adf-465f-bb1c-be660e2d4b30" bpmnElement="sid-34420647-954f-4e2a-a7be-07ffcce41525">
+        <omgdi:waypoint x="33.750004" y="-25.0"/>
+        <omgdi:waypoint x="75.0" y="-25.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
