@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI"
+             typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath"
+             targetNamespace="http://www.activiti.org/processdef">
+    <process id="test-multi-instance-for-user-task-no-sequential" name="test-multi-instance-for-user-task-no-sequential"
+             isExecutable="true">
+        <startEvent id="start-event"/>
+        <endEvent id="end-event"/>
+        <userTask id="user-task" name="User Task" activiti:assignee="${user}">
+            <!--        isSequential="false"  并行执行
+                         表示多个实例按照[collection-"${users}"]中指定的集合变量名称顺序执行每个实例
+            -->
+            <!--        collection="${users}"  用户集合，直接写成users也可以-->
+            <!--        elementVariable="user"  遍历users变量的单个变量名称-->
+            <multiInstanceLoopCharacteristics isSequential="false"
+                                              activiti:collection="${users}" activiti:elementVariable="user">
+                <!--                设置此任务的结束条件-->
+                <completionCondition>${nrOfCompletedInstances/nrOfInstances >= rate }</completionCondition>
+            </multiInstanceLoopCharacteristics>
+        </userTask>
+        <sequenceFlow id="sid-91a0acd5-1d60-4fa9-8283-334219f9b30c" sourceRef="start-event" targetRef="user-task"/>
+        <sequenceFlow id="sid-d46b3ec6-6227-4aa2-821b-c1047a619cc6" sourceRef="user-task" targetRef="end-event"/>
+    </process>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_test-multi-instance-for-user-task">
+        <bpmndi:BPMNPlane bpmnElement="test-multi-instance-for-user-task"
+                          id="BPMNPlane_test-multi-instance-for-user-task">
+            <bpmndi:BPMNShape id="shape-f096d2a5-dd09-415e-8ce9-9f3eea2e795c" bpmnElement="start-event">
+                <omgdc:Bounds x="-180.0" y="-25.0" width="30.0" height="30.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="shape-065fbb66-5b8b-4fe9-9809-76b2d5f4a73d" bpmnElement="end-event">
+                <omgdc:Bounds x="70.0" y="-25.0" width="30.0" height="30.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="shape-6344112e-4e15-4ab6-a65c-5c83e7b3cc77" bpmnElement="user-task">
+                <omgdc:Bounds x="-90.0" y="-32.5" width="95.0" height="45.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNEdge id="edge-ebcf560a-177e-4269-a55a-9bb504fb8d2a"
+                             bpmnElement="sid-91a0acd5-1d60-4fa9-8283-334219f9b30c">
+                <omgdi:waypoint x="-150.0" y="-10.0"/>
+                <omgdi:waypoint x="-90.0" y="-10.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="edge-b89580ae-e1ee-48f3-9313-c6e7511c5d55"
+                             bpmnElement="sid-d46b3ec6-6227-4aa2-821b-c1047a619cc6">
+                <omgdi:waypoint x="5.0" y="-10.0"/>
+                <omgdi:waypoint x="70.0" y="-10.0"/>
+            </bpmndi:BPMNEdge>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</definitions>
