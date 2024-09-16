@@ -5,7 +5,7 @@ import org.activiti.engine.delegate.DelegateTask;
 import org.activiti.engine.delegate.TaskListener;
 
 /**
- * 任务监听器{@link TaskListener}只能监听带有任务信息的节点,开始和结束节点在Activiti中没有任务信息无法监听
+ * 任务监听器{@link TaskListener}只能监听带有任务信息的节点,开始和结束节点在Activiti中没有任务信息无法监听。需要在userTask标签中配置
  * <p>
  * create: 任务被创建，并且所有的属性都被设置好后。
  * <p>

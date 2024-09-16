@@ -10,8 +10,6 @@
         <extensionElements>
             <activiti:executionListener event="start" class="qx.leizige.listener.ManagerExecutionListener"/>
             <activiti:executionListener event="end" class="qx.leizige.listener.ManagerExecutionListener"/>
-            <activiti:taskListener event="create" class="qx.leizige.listener.ManagerTaskListener"/>
-            <activiti:taskListener event="complete" class="qx.leizige.listener.ManagerTaskListener"/>
         </extensionElements>
 
         <startEvent id="start-event" activiti:assignee="${processSponsor}"/>
