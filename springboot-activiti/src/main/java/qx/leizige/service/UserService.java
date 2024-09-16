@@ -1,4 +1,9 @@
 package qx.leizige.service;
 
-public class UserService {
+
+public interface UserService {
+
+
+    String getDepartmentManager(String user);
+
 }
