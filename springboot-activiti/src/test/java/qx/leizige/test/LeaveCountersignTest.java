@@ -1,8 +1,10 @@
 package qx.leizige.test;
 
 import org.activiti.engine.HistoryService;
+import org.activiti.engine.ProcessEngineConfiguration;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
+import org.activiti.engine.delegate.event.ActivitiEventType;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.assertj.core.util.Lists;
@@ -43,6 +45,9 @@ public class LeaveCountersignTest {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private ProcessEngineConfiguration processEngineConfiguration;
+
 
     @Test
     public void testProcess() {
@@ -56,6 +61,10 @@ public class LeaveCountersignTest {
         variables.put("users", users);
 
         //启动流程
+        runtimeService.addEventListener(
+                new GlobalActivitiEventListener(),
+                ActivitiEventType.values()
+        );
         runtimeService.startProcessInstanceByKey(processDefinitionKey, variables);
 
         //查询上级领导任务

@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-@ConditionalOnBean(SpringProcessEngineConfiguration.class)
 public class ActivitiProcessEngineConfigurationConfigurer implements ProcessEngineConfigurationConfigurer {
 
     @Autowired
@@ -35,5 +34,6 @@ public class ActivitiProcessEngineConfigurationConfigurer implements ProcessEngi
         activitiEventListenerMap.put(ActivitiEventType.TASK_CREATED.name(), Lists.newArrayList(activitiEventListener));
         activitiEventListenerMap.put(ActivitiEventType.TASK_COMPLETED.name(), Lists.newArrayList(activitiEventListener));
         configuration.setTypedEventListeners(activitiEventListenerMap);
+        configuration.setEventListeners(Lists.newArrayList(new GlobalActivitiEventListener()));
     }
 }
